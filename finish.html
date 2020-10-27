@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+ .sidenav {
+  font-family: arial, sans-serif ; 
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.sidenav a:hover, .dropbtn:hover {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+  font-family: arial, sans-serif ;
+  
+ 
+}
+.dropdown-content {
+  display: none;
+  position: left;
+  background-color: #f1f1f1;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown {
+  position: relative;
+  display: left;
+  
+}
+.dropbtn {
+  background-color: #111; 
+  color: #818181;
+  font-size: 20px;
+  border: none;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {background-color: #556B2F;
+text-decoration: none;}
+
+
+.dropdown:hover .dropdown-content {display: block;
+color: #f1f1f1
+text-decoration: none;}
+
+
+.dropdown:hover .dropbtn {background-color: #111;
+color: #f1f1f1}
+
+	h1{ position: relative;
+      left: 50%;
+      color:white ;
+      font-size: 60px;
+      text-shadow: 2px 2px #111;
+      text-align: justify;
+    }
+    .welcome{
+      top: 3%;
+    }
+  ol{
+  top: 170%;
+  position: absolute ;
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  padding-left: 250px;
+  padding-top: 60px;
+  color: #d2f19b;
+  height: 10%;
+  font: outline;
+  font-size: 18px;
+  text-align: left;
+      
+    }
+.table1 {
+  position: relative ;
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  padding-left: 250px;
+  padding-top: 50px;
+  color: #d2f19b;
+  height: 10%;
+  font: outline;
+  font-size: 18px;
+}
+body{
+  background-color: grey;
+  background-image: url(123.jpeg);
+  background-repeat:round;
+}
+p { 
+  position: relative;
+  float: left;
+  padding-left: 200px;
+  font-family: 'Times New Roman', Times, serif;
+  font: outline;
+  font-size: 20px;
+  color: beige;
+  width: 50%;
+}
+.words{
+  padding-right: 50%;
+  top: -220px;
+}.words2{
+  padding-right: 50%;
+  top: 10px;
+
+
+}
+.intro{
+  position: relative;
+  left: 50%;
+  color:wheat ;
+  font-size: 15px;
+  text-shadow: 2px 2px #111;
+  
+}
+.slika1{  
+  float: right;
+  margin-top: -2cm;
+  margin-right: 1cm; 
+}
+.slika2{
+  position: absolute;
+  right: 20%;
+  top: 150%;
+  }
+.slika3{
+  position: absolute;
+  left: 20%;
+  top:215%;
+}
+.fave{
+  padding-top: 30%;
+}
+h2{
+  position: relative;
+  float: left;
+  padding-left: 200px;
+  font-family: 'Times New Roman', Times, serif;
+  font: outline;
+  font-size: 20px;
+  color: rgb(250, 250, 131);
+  font-size: 40px;
+}
+.figcaption1{
+  right: 22%;
+  top: 141%;
+  position: absolute;
+  padding-bottom: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font: outline;
+  font-size: 20px;
+  color: beige;
+  padding-top: 30px;
+}
+.figcaption2{
+  left: 32%;
+  top: 205%;
+  position: absolute;
+  padding-bottom: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font: outline;
+  font-size: 20px;
+  color: beige;
+  padding-top: 30px;
+}
+a.link  { text-decoration: none;
+color:white;
+font-size: 18px;
+font-family: 'Times New Roman', Times, serif; }
+
+a:hover  { text-decoration: underline; }
+img.galerija {
+  height: 300px;
+  width: 300px;
+  padding: 50px, 50px, 50px, 50px;
+  position: relative;
+  float:right;
+  top: 500px;
+  padding-top: 80px;
+  padding-bottom:50px;
+  padding-right: 50px;
+  padding-left: 50px;
+
+}
+.galery{
+  padding-top: 20%;
+  top:290%;
+}
+button.galerija{
+  position: absolute;
+  font-style: italic;
+  background-color: red;
+  color: white;
+}
+.blog {
+  padding-top: 20%;
+  top:480%;
+  position: absolute;
+}
+.survey {
+  position: absolute;
+  padding-top: 20%;
+  top: 600%
+  
+}
+
+
+        </style>
+        <meta charset="utf-8">
+        <title>Gorjan Markov</title>
+  
+    </head>
+    <body>
+      <section id="1">
+      <h1 class="welcome">Welcome</h1>
+      <div class="intro">Здраво, Добредојдовте на мојата веб страна.</div>
+      <p>Јас сум <strong>Горјан Марков</strong>, еве неколку fun facts за мене:</p>
+      <ul class="table1" style="list-style-type: disc;" >
+        <li><strong>Живеам во Велес </strong></li>
+        <li><strong>Завршено средно во Гимназија Кочо Рацин-Велес</strong></li>
+        <li><strong>Студент на ФЕИТ </strong>
+          <ul  style="list-style-type: disc;">
+            <li>3 година </li>
+            <li>Смер КТИ </li>
+          </ul>
+        </li>
+      </ul>
+      <div> <img src="jas.jpg" alt="" class="slika1" width="300" height="300"></div>
+      <p class="words">“Your work is going to fill a large part of your life, and the only way to be truly<wbr>
+         satisfied is to do what you believe is great work. And the only way to do great work<wbr>
+          is to love what you do. If you haven’t found it yet, keep looking. Don’t settle. As<wbr>
+           with all matters of the heart, you’ll know when you find it.” – Steve Jobs</p>
+            
+
+            </section>
+          <section id="2">
+            <h1 class="fave" >Favourite things</h1>
+             
+              <h2>Music</h2>
+              <p class="words2" ><a href="https://genius.com/albums/Jay-z/4-44" class="link">4:44</a> is the thirteenth studio album by American rapper Jay-Z. It was released on June 30, 2017, through Roc
+                 Nation as an exclusive to Sprint and Tidal customers. The album is the first in a planned series of music exclusives
+                  from the Sprint–Tidal partnership. For a short time, on July 2, the album was made available for free digital
+                   download in Tidal's site. A physical edition was released on July 7, including three additional tracks.
+                    On the same day, the album was made available to other streaming platforms, such as Apple Music,
+                     Google Play Music and Amazon Music.</p>
+              <figure>
+                <img src="4-44_album_cover.png" width="150px" height="150px" class="slika2">
+                <figcaption class="figcaption1">JAY Z 4:44</figcaption>
+              </figure>
+              <article>
+                
+                
+                <p style="bottom:0.5cm"><em>Track list:</em>
+                  <ol>
+                    <li>"Kill Jay Z"</li>
+                    <li>"The Story of O.J."</li>
+                    <li>"Smile"</li>
+                    <li>"Caught Their Eyes"</li>
+                    <li>"4:44"</li>
+                    <li>"Family Feud"</li>
+                    <li>"Bam"</li>
+                    <li>"Moonlight"</li>
+                    <li>"Marcy Me"</li>
+                    <li>"Legacy"</li>
+                  </ol>
+                </p>
+              </article>
+              <h2 bottom:100px;>Movies</h2>
+              <div style="padding-right: 20px; float: right; padding-bottom: 20px; font-size: 15px; position: relative; color: white; bottom:-200px;">About the movie:</div>
+              <p style="text-align: right; float:right; padding-top: 100px; padding-right: 20px;">Interstellar is a 2014 British-American epic
+                 science fiction film directed and produced by Christopher Nolan. It stars Matthew McConaughey,
+                  Anne Hathaway, Jessica Chastain, Bill Irwin, Ellen Burstyn, John Lithgow, Matt Damon,
+                   and Michael Caine. Set in a dystopian future where humanity is struggling to survive, the film follows
+                    a group of astronauts who travel through a wormhole near Saturn in search of a new home for mankind.
+              </p>
+              <p style="text-align: right; float:right; padding-top: 20px; padding-right: 20px;" >  Brothers Christopher and Jonathan Nolan wrote the screenplay, which had its
+                 origins in a script Jonathan developed in 2007. Christopher produced Interstellar with his wife,
+                  Emma Thomas, through their production company Syncopy, and with Lynda Obst through Lynda Obst Productions.
+                  Caltech theoretical physicist and 2017 Nobel laureate in Physics[4] Kip Thorne was an executive producer,
+                  acted as scientific consultant, and wrote a tie-in book, The Science of Interstellar. Paramount Pictures,
+                 Warner Bros., and Legendary Pictures co-financed the film. Cinematographer Hoyte van Hoytema shot it on 35 mm
+                  in the Panavision anamorphic format and IMAX 70 mm. Principal photography began in late 2013 and took place
+                in Alberta (Canada), Iceland and Los Angeles. Interstellar uses extensive practical and miniature effects and
+                 the company Double Negative created additional digital effects.
+            </p>
+              <figure>
+                <img src="Interstellar.jpg" width="290px" height="400px" class="slika3">
+                <figcaption class="figcaption2">Movie poster</figcaption>
+              </figure>
+              <h2 style="top: 300px">Food</h2>
+              <p class="words2" style="top:100px;">
+                A hamburger (also burger for short) is a sandwich consisting of one or more cooked patties of ground meat, usually beef,
+                 placed inside a sliced bread roll or bun. The patty may be pan fried, grilled, smoked or flame broiled. Hamburgers
+                  are often served with cheese, lettuce, tomato, onion, pickles, bacon, or chiles; condiments such as ketchup, mustard,
+                   mayonnaise, relish, or a "special sauce", often a variation of Thousand Island dressing; and are frequently placed
+                   on sesame seed buns. A hamburger topped with cheese is called a cheeseburger.
+              </p>
+              <figure>
+                <img src="burger.jpg" width="200px" height="180px" style="position: absolute; top:280%; right: 18%;">
+                <figcaption style="position: absolute; top:245% right: 19%;">"cheeseburger</figcaption>
+              </figure>
+              <summary style="position: relative; float:left; padding-top: 50px; top:40px; left: 200px;">
+                <a class="link" href="https://www.instagram.com/burgerslut.mk/?hl=en" > My Favourite place.</a></summary>
+          </section>
+          <section id="3">
+            <h1 class="galery" style="position: absolute;">Galery</h1>
+              <figure>
+                  <img src="sl1.jpg" class="galerija">
+                  <figcaption>
+                    <button style="top: 420%; right: 24%; z-index: 2;" class="galerija" >
+                    Like
+                  </button>
+                  </figcaption>
+              </figure>
+              <figure>
+                <img src="sl2.jpg" class="galerija">
+                <figcaption>
+                  <button style="top: 420%; right: 50%; z-index: 2;" class="galerija">
+                    Like
+                  </button>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="sl3.jpg" class="galerija">
+                <figcaption>
+                  <button style="top: 420%; left: 21%; z-index: 2;" class="galerija">
+                    Like
+                  </button>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="sl4.jpg" class="galerija">
+                <figcaption>
+                  <button style="top: 480%;  right: 24%; z-index: 2;" class="galerija">
+                    Like
+                  </button>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="sl5.jpg" class="galerija">
+                <figcaption>
+                  <button style="top: 480%; right: 50%; z-index: 2;" class="galerija">
+                    Like
+                  </button>
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="sl6.jpg" class="galerija">
+                <figcaption>
+                  <button style="top: 480%; left: 21%; z-index: 2;" class="galerija">
+                    Like
+                  </button>
+                </figcaption>
+              </figure>
+          </section>
+          <section id="4">
+            <h1 class="blog" >Blog</h1>
+            <div style="position: relative; top: 25cm; padding-left: 20px;">
+              <p style="padding-bottom: 5px; top:3cm">
+              <label>Name of article:<p style="padding-bottom: 5px; top:2cm"> <input name="name" type = "text" size="50" required /></p></p>
+           </label>
+           </p>
+           
+            <p><label>Article: <br>
+              <textarea name = "article" style="color: black; background-color: lightgrey; height: 3cm; width: 15cm; " 
+                 rows = "30" cols = "50">Write here.</textarea>
+           </label></p>
+           <p>
+           <label >When are you writing this:
+            <input type = "datetime-local" required/> 
+            <input type="submit" style="font-style: oblique;">
+         </label>
+           </p>
+          
+          </div>
+          </section>
+          
+          <section id="5">
+            <h1 class="survey">Survey</h1>
+            <div style="position: relative; top: 35cm; padding-left: 20px;">
+            <form autocomplete="on" style="background-color: lightgray;"><p><label>Name: 
+              <input name = "name" type = "text" size = "25" required/>
+           </label></p>
+           <p><label>Email:
+            <input type = "email" id = "email" 
+               placeholder = "name@domain.com" />  
+            </label></p>
+            <p>
+              <label>Date of birth:
+                 <input type = "date" /> 
+              </label>
+           </p>
+           <p>
+            <strong>Things you liked:</strong><br>
+
+            <label>Site design
+               <input name = "thingsliked" type = "checkbox" 
+                  value = "Design"></label>
+            <label>Ease of use
+               <input name = "thingsliked" type = "checkbox" 
+                  value = "Ease"></label> 
+            <label>Images 
+               <input name = "thingsliked" type = "checkbox" 
+                  value = "Images"></label>
+            <label>Side navigation
+               <input name = "thingsliked" type = "checkbox" 
+                  value = "sidenav"></label>
+         </p>
+         <section id="galery"></section>
+         <p>
+          <label>Rate my site: 
+             <select name = "rating" required>
+                <option>Awesome</option>
+                <option>Very few flaws</option>
+                <option>It could me better</option>
+                <option>Needs a lot of work</option>
+                <option>Eh</option>
+                <option>Bad</option>
+                <option>Awful</option>
+             </select>
+          </label>
+       </p>
+       <p>
+        <strong>What is your profession:</strong><br>
+        <label>Teacher
+           <input name = "howtosite" type = "radio" 
+              value = "Teacher"></label> 
+        <label>Developer
+           <input name = "howtosite" type = "radio" 
+              value = "dev"></label>
+        <label>Assistant Teacher
+           <input name = "howtosite" type = "radio" 
+              value = "Assistant"></label>
+        <label>Student
+           <input name = "howtosite" type = "radio" 
+              value = "student"></label>
+              <label>Other
+                <input name = "howtosite" type = "radio" 
+                   value = "other"></label>
+                   
+     </p>
+     
+    <p><label>If u have any tips plese leave them bellow: <br>
+      <textarea name = "Comments" style="color: black; background-color: lightgrey; height: 1.5cm; width: 9cm; " 
+         rows = "5" cols = "20">Comments here.</textarea>
+   </label></p>
+   <p>
+    <input type="submit" value="submit" style="font-style: oblique;">
+    <input type="reset" value="reset" style="font-style: oblique;">
+   </p>
+   
+  </form>
+        
+          </section>
+          
+        <div class="sidenav">
+            <a href="#1">Home</a>
+            <a href="#2">Favourite things</a>
+            <a href="#galery">Galery</a>
+            <a href="#4">Blog</a>
+             <a href="#5">Survey</a>
+            <div class="dropdown">
+                <button class="dropbtn">Contact</button>
+                <div class="dropdown-content">
+                  <a href="https://www.facebook.com/markov.gorjan/">Facebook</a>
+                  <a href="https://www.instagram.com/gorjan_m/">Instagram</a>
+                  <a href="mailto:markovgogo@ymail.com">Mail</a>
+                  <a href="https://www.linkedin.com/in/gorjan-markov-396331185/">LinkedIn</a>
+                   
+          
+</html>
