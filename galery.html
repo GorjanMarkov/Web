@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    a.link  { text-decoration: none;
+color:white;
+font-size: 18px;
+font-family: 'Times New Roman', Times, serif; }
+
+a:hover  { text-decoration: underline; }
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.sidenav a , .dropdown-btn, .sidenav button {
+  font-size: smaller;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav a:hover, .dropdown-btn:hover,.sidenav button:hover {
+  color: #f1f1f1;
+}
+
+.active {
+  background-color: green;
+  color: white;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+	h1{ position: relative;
+      left: 50%;
+      color:white ;
+      font-size: 60px;
+      text-shadow: 2px 2px #111;
+      text-align: justify;
+      top: 3%;
+    }
+    a:hover  { text-decoration: underline; }
+* {
+  box-sizing: border-box;
+}
+body {
+
+background-color: grey;
+  background-image: url(123.jpeg);
+  background-repeat:round;
+  margin: 0;
+  font-family: Arial;
+}
+
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  
+}
+
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+  border-radius: 25px;
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  position: relative;
+  display: none;
+}
+
+
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+.stil{
+  border-radius: 25px;
+  background-color:lightgray;
+   padding-left: 10px;
+   padding-bottom:10px;
+   padding-right: 10px;
+    padding-top: 10px; 
+    box-shadow: 0 0 5pt 4pt #4CAF50;
+    
+   border: 2px solid black;
+}
+</style>
+</head>
+<body>
+    <section id="idk">
+    <h1>Gallery</h1>
+<div style="text-align:left; left:20%; position: relative;">
+  
+  
+
+
+
+<div class="row">
+  <div class="column">
+    <div class="stil">
+    <img src="sl1.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+    <p class="kop">0
+  </p>
+  <button onclick="funk(this)" id="1">Like</button>
+  <p><input type="text" placeholder="Type something..." id="input1">
+    <button type="button" onclick="comment(this);"id="com1">Comment</button></p>
+  </div></div>
+  <div class="column">
+    <div class="stil">
+    <img src="sl2.jpg" alt="Snow" style="width:100%" onclick="myFunction(this);">
+  <p class="kop">0</p>
+  <button onclick="funk(this)" id="2">Like</button>
+  <p><input type="text" placeholder="Type something..." id="input2">
+    <button type="button" onclick="comment(this);" id="com2">Comment</button></p>
+  </div></div>
+  
+  <div class="column">
+    <div class="stil">
+    <img src="sl3.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+    <p class="kop">0
+    
+  </p>
+  <button onclick="funk(this)" id="3">Like</button>
+  <p><input type="text" placeholder="Type something..." id="input3">
+    <button type="button" onclick="comment(this);"id="com3">Comment</button></p>
+  </div></div>
+  
+</div>
+<div class="row">
+<div class="column">
+    <div class="stil">
+    <img src="sl4.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+    <p class="kop">0  </p>
+    <button onclick="funk(this)" id="4">Like</button>
+    <p><input type="text" placeholder="Type something..." id="input4">
+    <button type="button" onclick="comment(this);"id="com4">Comment</button></p>
+    </div>
+</div>
+</div></div>
+
+<div class="sidenav">
+    <a href="home.html">Home</a>
+    <a href="test2.html" class="dropdown-btn">Favourite <br>Things</a>
+    <a href="galery.html">Gallery</a>
+    <a href="blog.html">Blog</a>
+    <a href="survey.html">Survey</a>
+    <button class="dropdown-btn">Contact 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="https://www.facebook.com/markov.gorjan/">Facebook</a>
+      <a href="https://www.instagram.com/gorjan_m/">Instagram</a>
+      <a href="mailto:markovgogo@ymail.com">Mail</a>
+      <a href="https://www.linkedin.com/in/gorjan-markov-396331185/">LinkedIn</a>
+    </div>
+    
+  </div>
+</section>
+<script>
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+          var i;
+          
+          for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+            } else {
+            dropdownContent.style.display = "block";
+            }
+            });
+          }
+
+
+var lajk1 = parseInt("0");
+var lajk2 = parseInt("0");
+var lajk3 = parseInt("0");
+var lajk4 = parseInt("0");
+function funk(kop){
+
+switch (kop.id){
+case "1":
+lajk1++;
+kop.previousElementSibling.innerHTML=lajk1;
+break;
+case "2":
+lajk2++;
+kop.previousElementSibling.innerHTML=lajk2;
+break;
+case "3":
+lajk3++;
+kop.previousElementSibling.innerHTML=lajk3;
+break;
+case "4":
+lajk4++;
+kop.previousElementSibling.innerHTML=lajk4;
+break;
+default:
+break;
+}
+}
+function comment(par){
+	switch (par.id){
+    case 'com1':
+    var input = document.getElementById("input1").value;
+    document.getElementById("input1").value="";
+    break;
+    case 'com2':
+    var input = document.getElementById("input2").value;
+    document.getElementById("input2").value="";
+    break;
+    case 'com3':
+    var input = document.getElementById("input3").value;
+    document.getElementById("input3").value="";
+    break;
+    case 'com4':
+    var input = document.getElementById("input4").value;
+    document.getElementById("input4").value="";
+    break;
+	default:
+    break;
+}
+   
+   
+   var p = String(input);
+   if(input == ''){return false;}
+   else{
+   var para = document.createElement("p");
+   var d = new Date();
+   var node = document.createTextNode(input+" " +d.toLocaleDateString());
+   para.appendChild(node);
+   par.parentElement.appendChild(para);
+   
+   }
+   
+   
+}
+
+
+</script>
+
+</body>
+</html>
