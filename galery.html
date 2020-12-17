@@ -259,30 +259,30 @@ background-color: grey;
   <div class="column">
     <div class="stil">
     <img src="sl1.jpg" alt="The moon" style="width:100%" onclick="popup(this);" id="myImg">
-    <p class="kop">0
-  </p>
+    <p class="kop" id="sl1">2</p>
   <input type="image" src="lajk.png" width="30" height="30" onclick="funk(this)" id="1">
   <p><input type="text" placeholder="Type something..." id="input1">
     <button type="button" onclick="comment(this);"id="com1">Comment</button></p>
+    <p id="com-list-1"></p>
   </div></div>
   <div class="column">
     <div class="stil">
     <img src="sl2.jpg" alt="Artistic" style="width:100%" onclick="popup(this);">
-  <p class="kop">0</p>
+  <p class="kop" id="sl2">3</p>
   <input type="image" src="lajk.png" width="30" height="30" onclick="funk(this)" id="2">
   <p><input type="text" placeholder="Type something..." id="input2">
     <button type="button" onclick="comment(this);" id="com2">Comment</button></p>
+    <p id="com-list-2"></p>
   </div></div>
   
   <div class="column">
     <div class="stil">
     <img src="sl3.jpg" alt="Puppy" style="width:100%" onclick="popup(this);">
-    <p class="kop">0
-    
-  </p>
+    <p class="kop" id="sl3">12</p>
   <input type="image" src="lajk.png" width="30" height="30" onclick="funk(this)" id="3">
   <p><input type="text" placeholder="Type something..." id="input3">
     <button type="button" onclick="comment(this);"id="com3">Comment</button></p>
+    <p id="com-list-3"></p>
   </div></div>
   
 </div>
@@ -290,10 +290,11 @@ background-color: grey;
 <div class="column">
     <div class="stil">
     <img src="sl4.jpg" alt="Beach" style="width:100%" onclick="popup(this);">
-    <p class="kop">0  </p>
+    <p class="kop" id="sl4">5</p>
     <input type="image" src="lajk.png" width="30" height="30" onclick="funk(this)" id="4">
     <p><input type="text" placeholder="Type something..." id="input4">
     <button type="button" onclick="comment(this);"id="com4">Comment</button></p>
+    <p id="com-list-4"></p>
     </div>
 </div>
 </div></div>
@@ -353,66 +354,134 @@ span.onclick = function() {
 }
 }
 
-var lajk1 = parseInt("0");
-var lajk2 = parseInt("0");
-var lajk3 = parseInt("0");
-var lajk4 = parseInt("0");
+document.getElementById("sl1").innerHTML=localStorage.getItem("1");
+document.getElementById("sl2").innerHTML=localStorage.getItem("2");
+document.getElementById("sl3").innerHTML=localStorage.getItem("3");
+document.getElementById("sl4").innerHTML=localStorage.getItem("4");
 function funk(kop){
 
 switch (kop.id){
 case "1":
-lajk1++;
-kop.previousElementSibling.innerHTML=lajk1;
+if(localStorage.getItem("1")){
+  localStorage.setItem("1",parseInt(localStorage.getItem("1"))+parseInt("1"));
+}else{
+  localStorage.setItem("1", parseInt("1"));
+};
+kop.previousElementSibling.innerHTML=localStorage.getItem("1");
 break;
 case "2":
-lajk2++;
-kop.previousElementSibling.innerHTML=lajk2;
+if(localStorage.getItem("2")){
+  localStorage.setItem("2",parseInt(localStorage.getItem("2"))+parseInt("1"));
+}else{
+  localStorage.setItem("2", parseInt("1"));
+};
+kop.previousElementSibling.innerHTML=localStorage.getItem("2");
 break;
 case "3":
-lajk3++;
-kop.previousElementSibling.innerHTML=lajk3;
+if(localStorage.getItem("3")){
+  localStorage.setItem("3",parseInt(localStorage.getItem("3"))+parseInt("1"));
+}else{
+  localStorage.setItem("3", parseInt("1"));
+};
+kop.previousElementSibling.innerHTML=localStorage.getItem("3");
 break;
 case "4":
-lajk4++;
-kop.previousElementSibling.innerHTML=lajk4;
+if(localStorage.getItem("4")){
+  localStorage.setItem("4",parseInt(localStorage.getItem("4"))+parseInt("1"));
+}else{
+  localStorage.setItem("1", parseInt("1"));
+};
+kop.previousElementSibling.innerHTML=localStorage.getItem("4");
 break;
 default:
 break;
 }
+
+
 }
+// = localStorage.getItem("com-list-1");
+//documet.getElementById("com-list-2")=localStorage.getItem("com-list-2");
+//documet.getElementById("com-list-3")=localStorage.getItem("com-list-3");
+//documet.getElementById("com-list-4")=localStorage.getItem("com-list-4");
+//document.getElementById("com-list-1").innerHTML=localStorage.getItem("lista1");
+//document.getElementById("com-list-2").innerHTML=localStorage.getItem("lista2");
+//document.getElementById("com-list-3").innerHTML=localStorage.getItem("lista3");
+//document.getElementById("com-list-4").innerHTML=localStorage.getItem("lista4");
+localStorage.setItem("lista1", " ");
+localStorage.setItem("lista2", " ");
+localStorage.setItem("lista3", " ");
+localStorage.setItem("lista4", " ");
 function comment(par){
 	switch (par.id){
     case 'com1':
     var input = document.getElementById("input1").value;
     document.getElementById("input1").value="";
+    var p = String(input);
+   if(input == ''){return false;}
+   else{
+   var para = document.createElement("p");
+   var para1 = document.createElement("p");
+   var d = new Date();
+   var node = document.createTextNode( p + " " + d.toLocaleDateString());
+   para.appendChild(node);
+   para1.appendChild(para);
+    localStorage.setItem("lista1", para1.innerHTML + localStorage.getItem("lista1") );
+    document.getElementById("com-list-1").innerHTML=localStorage.getItem("lista1");
+  };
     break;
     case 'com2':
     var input = document.getElementById("input2").value;
     document.getElementById("input2").value="";
+    var p = String(input);
+   if(input == ''){return false;}
+   else{
+   var para = document.createElement("p");
+   var para1 = document.createElement("p");
+   var d = new Date();
+   var node = document.createTextNode( p + " " + d.toLocaleDateString());
+   para.appendChild(node);
+   para1.appendChild(para);
+    localStorage.setItem("lista2", para1.innerHTML + localStorage.getItem("lista2") );
+    document.getElementById("com-list-2").innerHTML=localStorage.getItem("lista2");
+  };
     break;
     case 'com3':
     var input = document.getElementById("input3").value;
     document.getElementById("input3").value="";
+    var p = String(input);
+   if(input == ''){return false;}
+   else{
+   var para = document.createElement("p");
+   var para1 = document.createElement("p");
+   var d = new Date();
+   var node = document.createTextNode( p + " " + d.toLocaleDateString());
+   para.appendChild(node);
+   para1.appendChild(para);
+    localStorage.setItem("lista3", para1.innerHTML + localStorage.getItem("lista3") );
+    document.getElementById("com-list-3").innerHTML=localStorage.getItem("lista3");
+  };
     break;
     case 'com4':
     var input = document.getElementById("input4").value;
     document.getElementById("input4").value="";
+    var p = String(input);
+   if(input == ''){return false;}
+   else{
+   var para = document.createElement("p");
+   var para1 = document.createElement("p");
+   var d = new Date();
+   var node = document.createTextNode( p + " " + d.toLocaleDateString());
+   para.appendChild(node);
+   para1.appendChild(para);
+    localStorage.setItem("lista4", para1.innerHTML + localStorage.getItem("lista4") );
+    document.getElementById("com-list-4").innerHTML=localStorage.getItem("lista4");
+  };
     break;
 	default:
     break;
 }
    
-   
-   var p = String(input);
-   if(input == ''){return false;}
-   else{
-   var para = document.createElement("p");
-   var d = new Date();
-   var node = document.createTextNode(input+" " +d.toLocaleDateString());
-   para.appendChild(node);
-   par.parentElement.appendChild(para);
-   
-   }
+  
    
    
 }
