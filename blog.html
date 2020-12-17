@@ -223,6 +223,13 @@ h3{
             <p><label style="color: wheat; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Article: <p>
               <textarea style="color: black; background-color: lightgrey; height: 3cm; width: 15cm; " 
                  rows = "30" cols = "50" placeholder="Write here.." id="statija" required></textarea></p></label></p>
+          <form style="color: wheat; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> <p>
+            <label>Local News<input type="radio" value="Local News" name="type" onclick="setvalue(this)"></label> 
+            <label>Politics<input type="radio" value="Politics" name="type" onclick="setvalue(this)"></label>
+            <label>Sport<input type="radio" value="Sport"name="type" onclick="setvalue(this)"> </label>
+            <label>World News<input type="radio" value="World News" name="type" onclick="setvalue(this)"></label>
+            <label>Other<input type="radio" value="Other" name="type" onclick="setvalue(this)"></label>
+        </p></form>
            <p>
            <button onclick="funk()">Submit</button>
            </p>
@@ -262,20 +269,34 @@ h3{
     </div>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-  var dali_ima=0;
+ //localStorage.setItem("dali-ima", 0);
+ //localStorage.setItem("articles", "")
+  localStorage.setItem("tip-vesti", "");
+  function setvalue(tip){
+    localStorage.setItem("tip-vesti", tip.value);
+  }
+  document.getElementById("articles").innerHTML=localStorage.getItem("articles");
+  //localStorage.setItem("test","")
+  //var dali_ima=0;
   function funk(){
-    if(dali_ima==0){
+    if((localStorage.getItem("dali-ima"))==0){
+      localStorage.setItem("test", "");
       var celo = document.createElement("fieldset");
       var pocetok = document.createElement("h3");
       var node = document.createTextNode("Articles");
       pocetok.appendChild(node);
-      dali_ima++;
+      localStorage.setItem("dali-ima" , 1);
       var site = document.getElementById("articles");
       celo.appendChild(pocetok);
       site.appendChild(celo);
       celo.classList.add("stil");
       celo.id="celo";
+      var pom = document.createElement("p");
+      pom.appendChild(celo);
+      localStorage.setItem("articles", pom.innerHTML);
+      document.getElementById("articles").innerHTML=localStorage.getItem("articles");
     }
     var site = document.getElementById("celo");
     var ime = document.getElementById("ime").value;
@@ -285,13 +306,24 @@ h3{
     var set = document.createElement("fieldset");
     var naslov = document.createElement("legend");
     var statija = document.createElement("p");
+    if(ime=="" || tekst=="" || localStorage.getItem("tip-vesti")==""){
+      window.alert("Ги немате потполнето сите елементи.");
+      return;
+    }
     naslov.appendChild(node1);
     statija.appendChild(node2);
     set.appendChild(naslov);
     set.appendChild(statija);
     site.appendChild(set);
+    var pom2 = document.createElement("p");
+    //pom1.appendChild(set);
+    pom2.appendChild(site);
+    localStorage.setItem("articles", pom2.innerHTML);
+    //localStorage.setItem("articles", pom2.innerHTML + localStorage.getItem("articles"));
     document.getElementById("ime").value="";
     document.getElementById("statija").value="";
+    document.getElementById("articles").innerHTML=localStorage.getItem("articles");
+    window.location.reload();
   }
 
 var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -307,8 +339,14 @@ for (i = 0; i < dropdown.length; i++) {
   dropdownContent.style.display = "block";
   }
   });}
-  
-  
+  $(document).ready(function(){
+  $("textarea").focus(function(){
+    $(this).css("background-color", "yellow");
+  });
+  $("textarea").blur(function(){
+    $(this).css("background-color", "green");
+  });
+});
   
   
 </script>
